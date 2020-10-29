@@ -1,25 +1,6 @@
 import { Icon } from '../Icon';
 import PropTypes from 'prop-types'
 
-export const Search = ({placeholder = '', disabled = false, defaultValue = ''}) => {
-
-    const container = Container();
-
-    const icons = { search, close };
-    Icon.add(icons);
-    const searchIcon = Icon(24, 'currentColor', 'search', '', null, null, null);
-
-    const input = Input({placeholder, disabled, defaultValue});
-
-    const closeIcon = Icon(24, 'currentColor', 'close', '', null, null, null);
-
-    container.appendChild(searchIcon);
-    container.appendChild(input);
-    container.appendChild(closeIcon);
-
-    return container;
-};
-
 const search = {
     name: 'search',
     prefix: 'eds',
@@ -57,7 +38,7 @@ const Container = (disabled) => {
     return container;
 };
 
-const Input = ({placeholder, disabled, defaultValue}) => {
+const Input = ({ placeholder, disabled, defaultValue }) => {
     const input = document.createElement('input');
     input.style.minHeight = '0';
     input.style.minWidth = '0';
@@ -69,7 +50,6 @@ const Input = ({placeholder, disabled, defaultValue}) => {
     input.style.appearance = 'none';
     input.style.boxSizing = 'border-box';
     input.style.background = 'transparent';
-    input.id = 'search-input';
     input.value = defaultValue;
     input.placeholder = placeholder;
 
@@ -78,24 +58,64 @@ const Input = ({placeholder, disabled, defaultValue}) => {
         input.style.cursor = 'not-allowed';
     }
 
-    input.addEventListener('focus', function() {
+    input.addEventListener('focus', function () {
         this.style.outline = 'none';
+    });
+
+    input.addEventListener('input', function () {
+        if (this.value.length != 0) {
+            this.parentElement.querySelector('div').style.visibility = 'visible';
+        } else {
+            this.parentElement.querySelector('div').style.visibility = 'hidden';
+        }
     });
 
     return input;
 };
 
-const InsideButton = () => {
+const InsideButton = (defaultValue) => {
     const insideButton = document.createElement('div');
     insideButton.style.display = 'flex';
     insideButton.style.alignItems = 'center';
-    insideButton.style.visibility = 'hidden';
     insideButton.style.zIndex = '1';
     insideButton.style.padding = '4px';
-    insideButton.style.height = '16px';
-    insideButton.style.width = '16px';
+    insideButton.style.height = '24px';
+    insideButton.style.width = '24px';
     insideButton.style.position = 'relative';
     insideButton.id = 'search-clear-button';
 
+    if (defaultValue !== ''){
+        insideButton.style.visibility = 'visible';
+    } else {
+        insideButton.style.visibility = 'hidden';
+    }
+
+    insideButton.addEventListener('click', function () {
+        this.style.visibility = 'hidden';
+        this.parentElement.querySelector('input').value = '';
+        this.parentElement.querySelector('input').focus();
+    });
+
     return insideButton;
+};
+
+export const Search = ({ placeholder = '', disabled = false, defaultValue = '' }) => {
+
+    const container = Container();
+
+    const icons = { search, close };
+    Icon.add(icons);
+    const searchIcon = Icon(24, 'currentColor', 'search', '', null, null, null);
+
+    const input = Input({ placeholder, disabled, defaultValue });
+
+    const insideButton = InsideButton(defaultValue);
+    const closeIcon = Icon(24, 'currentColor', 'close', '', null, null, null);
+    insideButton.appendChild(closeIcon);
+
+    container.appendChild(searchIcon);
+    container.appendChild(input);
+    container.appendChild(insideButton);
+
+    return container;
 };
