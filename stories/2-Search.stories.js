@@ -7,7 +7,9 @@ export default {
 
 export const BasicSearch = Search.bind({});
 BasicSearch.args = {
-  placeholder: 'Search'
+  placeholder: 'Search',
+  defaultValue: '',
+  disabled: false,
 }
 
 export const PrefilledSearch = Search.bind({});
