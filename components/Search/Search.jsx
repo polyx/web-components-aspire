@@ -38,11 +38,10 @@ const Container = (disabled) => {
     }
 
     container.addEventListener('mouseover', function () {
-        if (!disabled){
+        if (!disabled) {
             container.style.border = '1px solid black';
             container.style.margin = '0 -1px 0 -1px';
         }
-        console.log(this.style.cursor.toString());
     });
 
     container.addEventListener('mouseleave', function () {
@@ -53,7 +52,7 @@ const Container = (disabled) => {
     return container;
 };
 
-const Input = ({ placeholder, disabled, defaultValue }) => {
+const Input = ({ placeholder, disabled, defaultValue, onFocus, onBlur }) => {
     const input = document.createElement('input');
     input.style.minHeight = '0';
     input.style.minWidth = '0';
@@ -62,6 +61,7 @@ const Input = ({ placeholder, disabled, defaultValue }) => {
     input.style.margin = '0';
     input.style.padding = '0';
     input.style.border = 'none';
+    input.style.outline = 'none';
     input.style.appearance = 'none';
     input.style.boxSizing = 'border-box';
     input.style.background = 'transparent';
@@ -74,8 +74,16 @@ const Input = ({ placeholder, disabled, defaultValue }) => {
     }
 
     input.addEventListener('focus', function () {
-        this.style.outline = 'none';
-    });
+        if (onFocus != undefined) {
+            onFocus(this);
+        }
+    })
+
+    input.addEventListener('blur', function () {
+        if (onBlur != undefined) {
+            onBlur(this);
+        }
+    })
 
     input.addEventListener('input', function () {
         if (this.value.length != 0) {
@@ -114,7 +122,7 @@ const InsideButton = (defaultValue) => {
     return insideButton;
 };
 
-export const Search = ({ placeholder = '', disabled = false, defaultValue = '' }) => {
+export const Search = ({ placeholder = '', disabled = false, defaultValue = '', onFocus = undefined, onBlur = undefined }) => {
 
     const container = Container(disabled);
 
@@ -122,7 +130,7 @@ export const Search = ({ placeholder = '', disabled = false, defaultValue = '' }
     Icon.add(icons);
     const searchIcon = Icon(24, 'currentColor', 'search', '', null, null, null);
 
-    const input = Input({ placeholder, disabled, defaultValue });
+    const input = Input({ placeholder, disabled, defaultValue, onFocus, onBlur });
 
     const insideButton = InsideButton(defaultValue);
     const closeIcon = Icon(24, 'currentColor', 'close', '', null, null, null);

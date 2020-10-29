@@ -21,3 +21,16 @@ DisabledSearch.args = {
   placeholder: 'Disabled Search',
   disabled: true
 }
+
+const onFocusFunction = function(e) {
+  e.placeholder = 'Focused';
+};
+const onBlurFunction = function(e) {
+  e.placeholder = 'Blurred'
+};
+export const SearchWithBlurAndFocusFunctions = Search.bind({});
+SearchWithBlurAndFocusFunctions.args = {
+  placeholder: 'Blurred',
+  onFocus: onFocusFunction,
+  onBlur: onBlurFunction
+}
