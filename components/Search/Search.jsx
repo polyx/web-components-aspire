@@ -30,10 +30,25 @@ const Container = (disabled) => {
     container.style.gridAutoColumns = 'max-content auto max-content';
     container.style.alignItems = 'center';
     container.style.boxSizing = 'border-box';
-    container.style.border = '1px solid black';
     container.style.zIndex = '0';
+    container.style.backgroundColor = 'rgb(247,247,247)';
 
-    if (disabled) { container.style.cursor = 'not-allowed'; }
+    if (disabled) {
+        container.style.cursor = 'not-allowed';
+    }
+
+    container.addEventListener('mouseover', function () {
+        if (!disabled){
+            container.style.border = '1px solid black';
+            container.style.margin = '0 -1px 0 -1px';
+        }
+        console.log(this.style.cursor.toString());
+    });
+
+    container.addEventListener('mouseleave', function () {
+        container.style.border = 'none';
+        container.style.margin = '0';
+    });
 
     return container;
 };
@@ -84,7 +99,7 @@ const InsideButton = (defaultValue) => {
     insideButton.style.position = 'relative';
     insideButton.id = 'search-clear-button';
 
-    if (defaultValue !== ''){
+    if (defaultValue !== '') {
         insideButton.style.visibility = 'visible';
     } else {
         insideButton.style.visibility = 'hidden';
@@ -101,7 +116,7 @@ const InsideButton = (defaultValue) => {
 
 export const Search = ({ placeholder = '', disabled = false, defaultValue = '' }) => {
 
-    const container = Container();
+    const container = Container(disabled);
 
     const icons = { search, close };
     Icon.add(icons);
