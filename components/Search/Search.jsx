@@ -1,7 +1,7 @@
 import { Icon } from '../Icon';
 import PropTypes from 'prop-types'
 
-export const Search = ({placeholder = '', defaultValue = ''}) => {
+export const Search = ({placeholder = '', disabled = false, defaultValue = ''}) => {
 
     const container = Container();
 
@@ -9,7 +9,7 @@ export const Search = ({placeholder = '', defaultValue = ''}) => {
     Icon.add(icons);
     const searchIcon = Icon(24, 'currentColor', 'search', '', null, null, null);
 
-    const input = Input({placeholder, defaultValue});
+    const input = Input({placeholder, disabled, defaultValue});
 
     const closeIcon = Icon(24, 'currentColor', 'close', '', null, null, null);
 
@@ -38,11 +38,11 @@ const close = {
         'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z',
 }
 
-const Container = () => {
+const Container = (disabled) => {
     const container = document.createElement('span');
     container.style.position = 'relative';
     container.style.width = '100%';
-    container.style.height = '30px';
+    container.style.height = '35px';
     container.style.display = 'grid';
     container.style.gridGap = '8px';
     container.style.gridAutoFlow = 'column';
@@ -52,10 +52,12 @@ const Container = () => {
     container.style.border = '1px solid black';
     container.style.zIndex = '0';
 
+    if (disabled) { container.style.cursor = 'not-allowed'; }
+
     return container;
 };
 
-const Input = ({placeholder, defaultValue}) => {
+const Input = ({placeholder, disabled, defaultValue}) => {
     const input = document.createElement('input');
     input.style.minHeight = '0';
     input.style.minWidth = '0';
@@ -70,6 +72,11 @@ const Input = ({placeholder, defaultValue}) => {
     input.id = 'search-input';
     input.value = defaultValue;
     input.placeholder = placeholder;
+
+    if (disabled) {
+        input.disabled = disabled;
+        input.style.cursor = 'not-allowed';
+    }
 
     input.addEventListener('focus', function() {
         this.style.outline = 'none';

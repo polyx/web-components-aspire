@@ -15,3 +15,9 @@ PrefilledSearch.args = {
   placeholder: 'Search',
   defaultValue: 'Prefilled Value'
 };
+
+export const DisabledSearch = Search.bind({});
+DisabledSearch.args = {
+  placeholder: 'Disabled Search',
+  disabled: true
+}
