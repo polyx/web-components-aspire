@@ -1,6 +1,7 @@
 import { Icon } from '../Icon';
+import PropTypes from 'prop-types'
 
-export const Search = () => {
+export const Search = ({placeholder = '', defaultValue = ''}) => {
 
     const container = Container();
 
@@ -8,7 +9,7 @@ export const Search = () => {
     Icon.add(icons);
     const searchIcon = Icon(24, 'currentColor', 'search', '', null, null, null);
 
-    const input = Input();
+    const input = Input({placeholder, defaultValue});
 
     const closeIcon = Icon(24, 'currentColor', 'close', '', null, null, null);
 
@@ -54,7 +55,7 @@ const Container = () => {
     return container;
 };
 
-const Input = () => {
+const Input = ({placeholder, defaultValue}) => {
     const input = document.createElement('input');
     input.style.minHeight = '0';
     input.style.minWidth = '0';
@@ -67,12 +68,12 @@ const Input = () => {
     input.style.boxSizing = 'border-box';
     input.style.background = 'transparent';
     input.id = 'search-input';
+    input.value = defaultValue;
+    input.placeholder = placeholder;
 
     input.addEventListener('focus', function() {
         this.style.outline = 'none';
     });
-
-    input.placeholder = "Search";
 
     return input;
 };
