@@ -1,51 +1,68 @@
-import { linkTo } from "@storybook/addon-links";
-
+let show = false;
 export default {
   title: "Menu",
   argTypes: {
     children: { control: "text" },
+    children2: { control: "text" },
   },
 };
+const Template = ({ onClick, children, children2 }) => {
+  const Menu = document.createElement("div");
+  Menu.style.cssText = `
+  position: absolute;
+  z-index: 1;
+  width: 100px;
+  text-align:center;
+  border-radius:4px;
+  background: lightgray;
+  cursor: pointer;
+  `;
 
-class MenuItem extends HTMLElement {
-  constructor() {
-    super();
-  }
-  connectedCallback() {
-    const menuItem = document.createElement("li");
-    menuItem.innerHTML = this.children;
-    return menuItem;
-  }
-}
-
-class Menu extends HTMLElement {
-  constructor() {
-    super();
-  }
-  connectedCallback() {
-    const menu = document.createElement("ul");
-    menu.innerHTML = this.children;
-    return menu;
-  }
-}
-
-const Template = ({ children }) => {
-  window.customElements.define("custom-menu", Menu);
-  window.customElements.define("custom-menuitem", MenuItem);
-  const menu = document.createElement("custom-menu");
-  menu.style.cssText = `
-    background: #1E88E5;
-    color: hotpink;
-    padding: 2rem 4rem;
-    border: 2px solid blue;
-    font-size: 1.5rem;
+  const menuTemplate = document.createElement("a");
+  menuTemplate.style.display = "inline-table";
+  menuTemplate.innerHTML = "Menu";
+  menuTemplate.style.cssText = `
+ 
 `;
-  const menuItem = document.createElement("custom-menuitem");
-  const menuItem2 = document.createElement("custom-menuitem");
-  menuItem.innerHTML = "link 1";
-  menuItem2.innerHTML = "link 2";
-  menu.append(menuItem);
-  menu.append(menuItem2);
-  return menu;
+  menuTemplate.addEventListener("click", () => toggle({ btn1, btn2 }));
+
+  const btn1 = document.createElement("a");
+  btn1.type = "button";
+  btn1.innerText = children;
+  btn1.addEventListener("click", () => clickHandler());
+  btn1.style.cssText = `
+  cursor: pointer;
+  display:none;
+`;
+  const btn2 = document.createElement("a");
+  btn2.type = "button";
+  btn2.innerText = children2;
+  btn2.addEventListener("click", () => clickHandler2());
+  btn2.style.cssText = `
+  cursor: pointer;
+  display:none;
+`;
+
+  Menu.appendChild(menuTemplate);
+  Menu.appendChild(btn1);
+  Menu.appendChild(btn2);
+
+  return Menu;
 };
-export const Main_Menu = Template.bind({});
+
+var clickHandler = () => {
+  alert("First option was called");
+};
+
+var clickHandler2 = () => {
+  alert("Seccond option was called");
+};
+
+var toggle = ({ btn1, btn2 }) => {
+  show = !show;
+  btn1.style.display = show ? "block" : "none";
+  btn2.style.display = show ? "block" : "none";
+  dispatchEvent(new CustomEvent("showChange", { detail: show }));
+};
+
+export const Menu = Template.bind({});
