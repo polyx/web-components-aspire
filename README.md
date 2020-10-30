@@ -29,6 +29,10 @@ Some useful links for building web components
 
 > [Building Components - Google Developers](https://developers.google.com/web/fundamentals/web-components)
 
+> [Getting Started - StencilJS](https://stenciljs.com/docs/getting-started)
+
+> [Storybook NPM package](https://www.npmjs.com/package/@storybook/html)
+
 # Project structure
 
 ## Storybook
@@ -59,3 +63,7 @@ import { XXX } from "../components/XXX/index"
 1. Add the component in `./components` using `JSX` syntax. (Look at some of our examples).
 
 2. Profit.
+
+## Next Steps:
+
+Start using StencilJS with JSX-syntax found in the [Stencil branch](https://github.com/polyx/web-components-aspire/tree/stencil-js-and-storybook-with-webpack).
