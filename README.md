@@ -29,6 +29,8 @@ Some useful links for building web components
 
 > [Building Components - Google Developers](https://developers.google.com/web/fundamentals/web-components)
 
+> [An Introduction to Web Components - CSS Tricks](https://css-tricks.com/an-introduction-to-web-components/)
+
 > [Getting Started - StencilJS](https://stenciljs.com/docs/getting-started)
 
 > [Storybook NPM package](https://www.npmjs.com/package/@storybook/html)
