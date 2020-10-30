@@ -105,7 +105,7 @@ const InsideButton = (defaultValue) => {
     insideButton.style.height = '24px';
     insideButton.style.width = '24px';
     insideButton.style.position = 'relative';
-    insideButton.id = 'search-clear-button';
+    insideButton.style.borderRadius = '50%';
 
     if (defaultValue !== '') {
         insideButton.style.visibility = 'visible';
@@ -117,6 +117,16 @@ const InsideButton = (defaultValue) => {
         this.style.visibility = 'hidden';
         this.parentElement.querySelector('input').value = '';
         this.parentElement.querySelector('input').focus();
+    });
+
+    insideButton.addEventListener('mouseover', function () {
+        this.style.backgroundColor = 'rgb(222, 237, 238)';
+        this.style.cursor = 'pointer';
+    });
+
+    insideButton.addEventListener('mouseleave', function (){
+        this.style.background = 'transparent';
+        this.style.cursor = 'none';
     });
 
     return insideButton;
