@@ -35,6 +35,8 @@ Some useful links for building web components
 
 > [Storybook NPM package](https://www.npmjs.com/package/@storybook/html)
 
+>[Build a Web Component library with Stencil and Storybook](https://dev.to/ofhouse/build-a-web-component-library-with-stencil-and-storybook-c27)
+
 # Project structure
 
 ## Storybook
@@ -69,3 +71,24 @@ import { XXX } from "../components/XXX/index"
 ## Next Steps:
 
 Start using StencilJS with JSX-syntax found in the [Stencil branch](https://github.com/polyx/web-components-aspire/tree/stencil-js-and-storybook-with-webpack).
+
+Stencil is a framework which let us write Web Components in a JSX-style syntax similar to React's class-components. It then compiles it to native Web Components code to make it usable in the browser. 
+
+1. In order to add a new component and display it in Storybook, run the following command in a seperate command line and follow the instructions:
+
+```sh
+npm run generate
+```
+
+Stencil will now generate files in src/components/`name-of-component`. 
+
+2. Add a Storybook file in the same directory e.g. `name-of-component.stories.js`
+
+3. In order to start Stencil and Storybook consurrently, type:
+
+```sh
+npm start
+```
+
+A website should open in your default browser using port `6006`:
+http://localhost:6006
