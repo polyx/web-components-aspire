@@ -1,0 +1,102 @@
+.buttondefprimary {
+  background-color: #007079;
+    height: 2.5em;
+    width: 8em;
+    color: white;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.buttondefprimary:hover {
+  background-color: #005860;
+  color: white;
+  cursor: pointer;
+}
+
+.buttondefsecondary {
+  background-color: #243746;
+    height: 2.5em;
+    width: 7em;
+    color: white;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.buttondefsecondary:hover {
+  background-color: #1b2a35;
+  color: white;
+  cursor: pointer;
+}
+
+.buttondefdanger {
+  background-color: #EB0000;
+    height: 2.5em;
+    width: 7em;
+    color: white;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.buttondefdanger:hover{
+  background-color: #D20000;
+  color: white;
+  cursor: pointer;
+}
+
+.buttondefdisabled {
+  background-color: #EAEAEA;
+    height: 2.5em;
+    width: 7em;
+    color: #BEBEBE;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.buttondefdisabled:hover{
+  cursor: not-allowed;
+}
+
+.buttonoutprimary {
+  background-color: white;
+    height: 2.5em;
+    width: 7em;
+    color: #007079;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+    border-color: #007079;
+}
+
+.buttonoutprimary:hover {
+  background-color: #009fac;
+  color: white;
+}
+
+.buttonghoprimary {
+  background-color: white;
+    height: 2.5em;
+    width: 7em;
+    color: #007079;
+    font-size: 0.875rem;
+    border: none;
+    background: none;
+}
+
+.buttonghoprimary:hover {
+  background-color: #009fac;
+  color: white;
+  border-radius: 8px;
+}
+
+.containercontained {
+  display: inline-block;
+  justify-content: space-between;
+}
+
+.containeroutlined {
+  display: inline-block;
+  justify-content: space-between;
+}
