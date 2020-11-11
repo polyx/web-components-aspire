@@ -25,6 +25,17 @@ export namespace Components {
     'middle': string;
   }
   interface TestComponent {}
+  interface TextField {
+    'disabled': boolean;
+    'helperIcon': HTMLElement;
+    'helpertext': string;
+    'label': string;
+    'meta': string;
+    'multiline': boolean;
+    'placeholder': string;
+    'type': string;
+    'variant': string;
+  }
 }
 
 declare global {
@@ -41,9 +52,16 @@ declare global {
     prototype: HTMLTestComponentElement;
     new (): HTMLTestComponentElement;
   };
+
+  interface HTMLTextFieldElement extends Components.TextField, HTMLStencilElement {}
+  var HTMLTextFieldElement: {
+    prototype: HTMLTextFieldElement;
+    new (): HTMLTextFieldElement;
+  };
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement;
     'test-component': HTMLTestComponentElement;
+    'text-field': HTMLTextFieldElement;
   }
 }
 
@@ -63,10 +81,22 @@ declare namespace LocalJSX {
     'middle'?: string;
   }
   interface TestComponent {}
+  interface TextField {
+    'disabled'?: boolean;
+    'helperIcon'?: HTMLElement;
+    'helpertext'?: string;
+    'label'?: string;
+    'meta'?: string;
+    'multiline'?: boolean;
+    'placeholder'?: string;
+    'type'?: string;
+    'variant'?: string;
+  }
 
   interface IntrinsicElements {
     'my-component': MyComponent;
     'test-component': TestComponent;
+    'text-field': TextField;
   }
 }
 
@@ -78,6 +108,7 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
       'test-component': LocalJSX.TestComponent & JSXBase.HTMLAttributes<HTMLTestComponentElement>;
+      'text-field': LocalJSX.TextField & JSXBase.HTMLAttributes<HTMLTextFieldElement>;
     }
   }
 }
