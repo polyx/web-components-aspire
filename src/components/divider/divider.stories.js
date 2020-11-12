@@ -1,5 +1,6 @@
 import { storiesOf } from '@storybook/html';
-import { withKnobs, text } from '@storybook/addon-knobs';
+import { withKnobs,  select} from '@storybook/addon-knobs';
+
 
 storiesOf('Divider', module)
   .addDecorator(withKnobs)
@@ -7,8 +8,8 @@ storiesOf('Divider', module)
   .add('Variant medium', () => '<my-divider color="lighter" variant="medium"></my-divider> <my-divider color="light" variant="medium"></my-divider><my-divider color="medium" variant="medium"></my-divider>')
   .add('Knobs',() => {
   const knobTest = document.createElement('my-divider');
-  knobTest.variant = text('variant', 'medium');
-  knobTest.color = text('color', 'medium');
+  knobTest.variant = select('Variant', ['small', 'medium']);
+  knobTest.color = select('Color', ['medium','light','lighter']);
 
   return knobTest;
 }
