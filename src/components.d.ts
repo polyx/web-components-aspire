@@ -27,7 +27,7 @@ export namespace Components {
   interface TestComponent {}
   interface TextField {
     'disabled': boolean;
-    'helperIcon': HTMLElement;
+    'helpericon': string;
     'helpertext': string;
     'label': string;
     'meta': string;
@@ -83,7 +83,7 @@ declare namespace LocalJSX {
   interface TestComponent {}
   interface TextField {
     'disabled'?: boolean;
-    'helperIcon'?: HTMLElement;
+    'helpericon'?: string;
     'helpertext'?: string;
     'label'?: string;
     'meta'?: string;

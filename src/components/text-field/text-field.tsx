@@ -1,9 +1,5 @@
 import { Component, State, Prop, Host, h } from '@stencil/core';
 
-// export const propsFor = {
-//   variants: ['error', 'warning', 'success', 'default'],
-// }
-
 @Component({
   tag: 'text-field',
   styleUrl: 'text-field.css',
@@ -20,7 +16,7 @@ export class TextField {
   @Prop() type: string = 'text';
   @Prop() multiline: boolean = false;
   @Prop({ reflectToAttr: true }) disabled: boolean = false;
-  @Prop() helperIcon: HTMLElement;
+  @Prop() helpericon: string = undefined;
 
   render() {
     return (
@@ -51,7 +47,14 @@ export class TextField {
             )}
           </div>
           <div class={this.focus ? 'helper focus' : 'helper'}>
-            {this.helperIcon && this.helperIcon} <p class={`helper-text${this.disabled ? ' disabled' : ''}`}>{this.helpertext}</p>
+            {this.helpericon && (
+              <div
+                class="svg"
+                innerHTML={this.helpericon}
+              />
+            )}
+            <p class={`helper-text${this.disabled ? ' disabled' : ''}`}>{this.helpertext}</p>
+            {/* {this.helpericon && this.helpericon} <p class={`helper-text${this.disabled ? ' disabled' : ''}`}>{this.helpertext}</p> */}
           </div>
         </div>
       </Host>

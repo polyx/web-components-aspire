@@ -82,6 +82,32 @@ storiesOf('Text field', module)
     return div;
   })
   .add('Variants', () => {
+    const svgError = `
+      <svg viewBox="0 0 24 24" width="16px" height="16px">
+        <path
+          clip-rule="evenodd"
+          fill-rule="evenodd"
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2h-2zm0-10v6h2V7h-2z"
+        ></path>
+      </svg>`;
+
+    const svgWarning = `
+      <svg viewBox="0 0 24 24" width="16px" height="16px">
+        <path
+          clip-rule="evenodd"
+          fill-rule="evenodd"
+          d="M23 21.5l-11-19-11 19h22zm-12-3v-2h2v2h-2zm0-4h2v-4h-2v4z"
+        ></path>
+      </svg>`;
+
+    const svgSuccess = `
+      <svg viewBox="0 0 24 24" width="16px" height="16px">
+        <path
+          clip-rule="evenodd"
+          fill-rule="evenodd"
+          d="M9 22h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 2 7.58 8.59C7.22 8.95 7 9.45 7 10v10c0 1.1.9 2 2 2zm0-12l4.34-4.34L12 11h9v2l-3 7H9V10zm-4 0H1v12h4V10z"
+        ></path>
+      </svg>`;
 
     const div = document.createElement('div');
     div.className = 'wrapper';
@@ -92,6 +118,7 @@ storiesOf('Text field', module)
     error.meta = 'Meta';
     error.helpertext = 'Helper Text';
     error.variant = 'error';
+    error.helpericon = svgError;
 
     div.appendChild(error);
 
@@ -101,6 +128,7 @@ storiesOf('Text field', module)
     warning.meta = 'Meta';
     warning.helpertext = 'Helper Text';
     warning.variant = 'warning';
+    warning.helpericon = svgWarning;
 
     div.appendChild(warning);
 
@@ -110,6 +138,7 @@ storiesOf('Text field', module)
     success.meta = 'Meta';
     success.helpertext = 'Helper Text';
     success.variant = 'success';
+    success.helpericon = svgSuccess;
 
     div.appendChild(success);
 

@@ -120,6 +120,39 @@ p {
   margin-top: 8px;
 }
 
+.error .helper .svg {
+  width: 16px;
+  height: 16px;
+  fill: #eb0000;
+  margin-right: 8px;
+}
+
+.error .helper.focus .svg {
+  fill: #b30d2f;
+}
+
+.warning .helper .svg {
+  width: 16px;
+  height: 16px;
+  fill: #ff9200;
+  margin-right: 8px;
+}
+
+.warning .helper.focus .svg {
+  fill: #ad6200;
+}
+
+.success .helper .svg {
+  width: 16px;
+  height: 16px;
+  fill: #4bb748;
+  margin-right: 8px;
+}
+
+.success .helper.focus .svg {
+  fill: #358132;
+}
+
 .helper-text {
   margin: 0;
     margin: 0;

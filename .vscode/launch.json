@@ -7,8 +7,8 @@
         {
             "type": "pwa-chrome",
             "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
+            "name": "Storybook Debug",
+            "url": "http://localhost:6006",
             "webRoot": "${workspaceFolder}"
         }
     ]
