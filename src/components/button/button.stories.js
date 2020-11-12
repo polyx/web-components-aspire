@@ -1,5 +1,6 @@
 import { storiesOf } from '@storybook/html';
-import { withKnobs, text, button,select,boolean } from '@storybook/addon-knobs';
+import { withActions } from '@storybook/addon-actions';
+import { withKnobs, text, button,select,boolean, color} from '@storybook/addon-knobs';
 
 import readme from './readme.md';
 
@@ -38,18 +39,32 @@ storiesOf("Buttons", module)
   
   
   .add(
-    "With knobs",
+    'With knobs',
     () => {
-        const div = document.createElement('div');
-        div.className = 'wrapper';
-        
+        const myButton = document.createElement('button');
+        myButton.innerHTML = text('Label','Some label');
+        myButton.style.cssText = `
+          background-color: #007079;
+          height: 2.5em;
+          width: 7em;
+          color: white;
+          font-size: 0.875rem;
+          border-radius: 0.25rem;
+          border: none;
+          margin-left: 2rem;
+          margin-bottom: 2rem;
+        `;
+
+
+  return myButton;
+    });
+     /*()=> {
         const buttonKnob = document.createElement('button');
-        buttonKnob.value = text('Value', 'value');
-
-        div.appendChild(buttonKnob);
-        return div;
-    }
-
+        buttonKnob.value = text('Value', '');
+     
+        return buttonKnob;
+     })
+*/
     /*
     `
     <p>
@@ -58,7 +73,7 @@ storiesOf("Buttons", module)
     </p>
   `
   */
-  );
+  
   
 
 /*const storyOptions = {

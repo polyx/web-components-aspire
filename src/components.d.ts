@@ -11,32 +11,9 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface MyButton {
-    /**
-    * HTML element to use as basis
-    */
-    'as': string;
-    /**
-    * Background color
-    */
-    'color': string;
-    /**
-    * Is disabled?
-    */
     'disabled': boolean;
     /**
-    * Displays button as link
-    */
-    'href': string | undefined;
-    /**
-    * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
-    */
-    'target': string | undefined;
-    /**
     * The button or input type (usually submit)
-    */
-    'type': "submit" | "reset" | "button";
-    /**
-    * Optional prop for input to show text
     */
     'value': string;
   }
@@ -86,32 +63,9 @@ declare global {
 
 declare namespace LocalJSX {
   interface MyButton {
-    /**
-    * HTML element to use as basis
-    */
-    'as'?: string;
-    /**
-    * Background color
-    */
-    'color'?: string;
-    /**
-    * Is disabled?
-    */
     'disabled'?: boolean;
     /**
-    * Displays button as link
-    */
-    'href'?: string | undefined;
-    /**
-    * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
-    */
-    'target'?: string | undefined;
-    /**
     * The button or input type (usually submit)
-    */
-    'type'?: "submit" | "reset" | "button";
-    /**
-    * Optional prop for input to show text
     */
     'value'?: string;
   }
