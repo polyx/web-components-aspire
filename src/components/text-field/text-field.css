@@ -70,17 +70,17 @@ p {
 
 .error .input {
   outline: 1px solid #eb0000;
-  border-bottom: 0;
+  border-bottom: 1px solid transparent;
 }
 
 .warning .input {
   outline: 1px solid #ff9200;
-  border-bottom: 0;
+  border-bottom: 1px solid transparent;
 }
 
 .success .input {
   outline: 1px solid #4bb748;
-  border-bottom: 0;
+  border-bottom: 1px solid transparent;
 }
 
 .input.focus {
