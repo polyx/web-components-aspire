@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property   | Attribute  | Description                               | Type      | Default     |
-| ---------- | ---------- | ----------------------------------------- | --------- | ----------- |
-| `disabled` | `disabled` |                                           | `boolean` | `undefined` |
-| `value`    | `value`    | The button or input type (usually submit) | `string`  | `undefined` |
+| Property | Attribute | Description | Type     | Default        |
+| -------- | --------- | ----------- | -------- | -------------- |
+| `color`  | `color`   |             | `string` | `'primary'`    |
+| `value`  | `value`   |             | `string` | `'Some Label'` |
 
 
 ----------------------------------------------

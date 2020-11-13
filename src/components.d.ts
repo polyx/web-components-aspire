@@ -11,10 +11,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface MyButton {
-    'disabled': boolean;
-    /**
-    * The button or input type (usually submit)
-    */
+    'color': string;
     'value': string;
   }
   interface MyComponent {
@@ -63,10 +60,7 @@ declare global {
 
 declare namespace LocalJSX {
   interface MyButton {
-    'disabled'?: boolean;
-    /**
-    * The button or input type (usually submit)
-    */
+    'color'?: string;
     'value'?: string;
   }
   interface MyComponent {

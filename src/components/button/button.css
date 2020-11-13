@@ -219,6 +219,52 @@ cursor: not-allowed;
   cursor: not-allowed;
 }
 
+.primary-button-color {
+  background-color: #007079;
+    height: 2.5em;
+    width: 7em;
+    color: white;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+    border: none;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.secondary-button-color{
+  background-color: #243746;
+  height: 2.5em;
+  width: 7em;
+  color: white;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  border: none;
+  margin-left: 2rem;
+}
+
+.danger-button-color{
+  background-color: #EB0000;
+    height: 2.5em;
+    width: 7em;
+    color: white;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+    border: none;
+    margin-left: 2rem;
+}
+
+.disabled-button-color{
+  background-color: #EAEAEA;
+height: 2.5em;
+width: 7em;
+color: #BEBEBE;
+font-size: 0.875rem;
+border-radius: 0.25rem;
+border: none;
+margin-left: 2rem;
+}
+
+
 
 
 

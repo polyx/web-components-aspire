@@ -9,21 +9,28 @@ import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
 export class Button {
 
 
- // @Prop() color: string;
+  private colors =  ['primary', 'secondary', 'danger', 'disabled'];
 
-  @Prop() disabled: boolean;
+  @Prop() color: string = 'primary';
+  @Prop() value: string = 'Some Label'
+  
 
-  /**
-   * The button or input type (usually submit)
-   */
-
-  @Prop() value: string;
-  //@Prop() variant: string = 'default';
-
-
+  private generateColor():string{
+    if(this.colors.indexOf(this.color)<0){
+        this.color = 'primary';
+        }
+    
+    return this.color + '-button-color'
+  }
 
   render() {
 
-    return
+    return(
+      <div class = 'container'>
+      <button class={this.generateColor()}
+      >{this.value}</button>
+      </div>
+      
+    )
   }
 }
