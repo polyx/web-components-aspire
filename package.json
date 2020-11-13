@@ -40,7 +40,6 @@
     "write-file-webpack-plugin": "^4.5.1"
   },
   "dependencies": {
-    "@equinor/eds-core-react": "^0.6.2",
     "@equinor/eds-icons": "^0.4.0"
   }
 }
