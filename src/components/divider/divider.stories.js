@@ -1,14 +1,25 @@
 import { storiesOf } from '@storybook/html';
 import { withKnobs,  select} from '@storybook/addon-knobs';
 
+import readme from './readme.md';
 
 storiesOf('Divider', module)
   .addDecorator(withKnobs)
-  .add('Variant small', () => 'text <my-divider color="lighter" variant="small"></my-divider> text <my-divider color="light" variant="small"></my-divider> text <my-divider color="medium" variant="small"></my-divider> text')
-  .add('Variant medium', () => 'text <my-divider color="lighter" variant="medium"></my-divider> text <my-divider color="light" variant="medium"></my-divider> text <my-divider color="medium" variant="medium"></my-divider> text')
+  .add('Variant small', () => 'text <eds-divider color="lighter" variant="small"></eds-divider> text <eds-divider color="light" variant="small"></eds-divider> text <eds-divider color="medium" variant="small"></eds-divider> text',
+  {
+      notes: {
+        markdown: readme,
+      },
+    })
+  .add('Variant medium', () => 'text <eds-divider color="lighter" variant="medium"></eds-divider> text <eds-divider color="light" variant="medium"></eds-divider> text <eds-divider color="medium" variant="medium"></eds-divider> text',
+  {
+      notes: {
+        markdown: readme,
+      },
+    })
   .add('Knobs',() => {
   const knobTest = document.createElement('div');
-  const myDivider = document.createElement('my-divider');
+  const myDivider = document.createElement('eds-divider');
   myDivider.variant = select('Variant', ['small', 'medium']);
   myDivider.color = select('Color', ['medium','light','lighter']);
   const text1 = document.createTextNode("This is some text");
@@ -18,5 +29,11 @@ storiesOf('Divider', module)
   knobTest.appendChild(text2);
 
   return knobTest;
-}
+},
+{
+      notes: {
+        markdown: readme,
+      },
+    }
+
 );
