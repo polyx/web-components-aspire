@@ -1,4 +1,4 @@
-# my-divider
+# eds-divider
 
 
 
