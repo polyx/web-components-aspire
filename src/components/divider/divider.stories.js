@@ -5,13 +5,13 @@ import readme from './readme.md';
 
 storiesOf('Divider', module)
   .addDecorator(withKnobs)
-  .add('Variant small', () => 'text <esp-divider color="lighter" variant="small"></esp-divider> text <esp-divider color="light" variant="small"></esp-divider> text <esp-divider color="medium" variant="small"></esp-divider> text',
+  .add('Variant small', () => 'text <eds-divider color="lighter" variant="small"></eds-divider> text <eds-divider color="light" variant="small"></eds-divider> text <eds-divider color="medium" variant="small"></eds-divider> text',
   {
       notes: {
         markdown: readme,
       },
     })
-  .add('Variant medium', () => 'text <esp-divider color="lighter" variant="medium"></esp-divider> text <esp-divider color="light" variant="medium"></esp-divider> text <esp-divider color="medium" variant="medium"></esp-divider> text',
+  .add('Variant medium', () => 'text <eds-divider color="lighter" variant="medium"></eds-divider> text <eds-divider color="light" variant="medium"></eds-divider> text <eds-divider color="medium" variant="medium"></eds-divider> text',
   {
       notes: {
         markdown: readme,
@@ -19,7 +19,7 @@ storiesOf('Divider', module)
     })
   .add('Knobs',() => {
   const knobTest = document.createElement('div');
-  const myDivider = document.createElement('esp-divider');
+  const myDivider = document.createElement('eds-divider');
   myDivider.variant = select('Variant', ['small', 'medium']);
   myDivider.color = select('Color', ['medium','light','lighter']);
   const text1 = document.createTextNode("This is some text");
