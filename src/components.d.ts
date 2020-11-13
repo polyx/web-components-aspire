@@ -28,7 +28,22 @@ export namespace Components {
     */
     'middle': string;
   }
+  interface MyDivider {
+    'color': string;
+    'variant': string;
+  }
   interface TestComponent {}
+  interface TextField {
+    'disabled': boolean;
+    'helpericon': string;
+    'helpertext': string;
+    'label': string;
+    'meta': string;
+    'multiline': boolean;
+    'placeholder': string;
+    'type': string;
+    'variant': string;
+  }
 }
 
 declare global {
@@ -46,15 +61,29 @@ declare global {
     new (): HTMLMyComponentElement;
   };
 
+  interface HTMLMyDividerElement extends Components.MyDivider, HTMLStencilElement {}
+  var HTMLMyDividerElement: {
+    prototype: HTMLMyDividerElement;
+    new (): HTMLMyDividerElement;
+  };
+
   interface HTMLTestComponentElement extends Components.TestComponent, HTMLStencilElement {}
   var HTMLTestComponentElement: {
     prototype: HTMLTestComponentElement;
     new (): HTMLTestComponentElement;
   };
+
+  interface HTMLTextFieldElement extends Components.TextField, HTMLStencilElement {}
+  var HTMLTextFieldElement: {
+    prototype: HTMLTextFieldElement;
+    new (): HTMLTextFieldElement;
+  };
   interface HTMLElementTagNameMap {
     'my-button': HTMLMyButtonElement;
     'my-component': HTMLMyComponentElement;
+    'my-divider': HTMLMyDividerElement;
     'test-component': HTMLTestComponentElement;
+    'text-field': HTMLTextFieldElement;
   }
 }
 
@@ -77,12 +106,29 @@ declare namespace LocalJSX {
     */
     'middle'?: string;
   }
+  interface MyDivider {
+    'color'?: string;
+    'variant'?: string;
+  }
   interface TestComponent {}
+  interface TextField {
+    'disabled'?: boolean;
+    'helpericon'?: string;
+    'helpertext'?: string;
+    'label'?: string;
+    'meta'?: string;
+    'multiline'?: boolean;
+    'placeholder'?: string;
+    'type'?: string;
+    'variant'?: string;
+  }
 
   interface IntrinsicElements {
     'my-button': MyButton;
     'my-component': MyComponent;
+    'my-divider': MyDivider;
     'test-component': TestComponent;
+    'text-field': TextField;
   }
 }
 
@@ -94,7 +140,9 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'my-button': LocalJSX.MyButton & JSXBase.HTMLAttributes<HTMLMyButtonElement>;
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+      'my-divider': LocalJSX.MyDivider & JSXBase.HTMLAttributes<HTMLMyDividerElement>;
       'test-component': LocalJSX.TestComponent & JSXBase.HTMLAttributes<HTMLTestComponentElement>;
+      'text-field': LocalJSX.TextField & JSXBase.HTMLAttributes<HTMLTextFieldElement>;
     }
   }
 }
