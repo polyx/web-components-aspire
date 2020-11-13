@@ -1,0 +1,334 @@
+:host {
+  display: inline-block;
+}
+
+.buttondefprimary {
+  background-color: #007079;
+    height: 2.5em;
+    width: 7em;
+    color: white;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+    border: none;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.buttondefprimary:hover {
+  background-color: #005860;
+  color: white;
+  cursor: pointer;
+}
+
+.buttondefsecondary {
+  background-color: #243746;
+    height: 2.5em;
+    width: 7em;
+    color: white;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+    border: none;
+    margin-left: 2rem;
+}
+
+.buttondefsecondary:hover {
+  background-color: #1b2a35;
+  color: white;
+  cursor: pointer;
+}
+
+.buttondefdanger {
+  background-color: #EB0000;
+    height: 2.5em;
+    width: 7em;
+    color: white;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+    border: none;
+    margin-left: 2rem;
+}
+
+.buttondefdanger:hover{
+  background-color: #D20000;
+  color: white;
+  cursor: pointer;
+}
+
+.buttondefdisabled{
+background-color: #EAEAEA;
+height: 2.5em;
+width: 7em;
+color: #BEBEBE;
+font-size: 0.875rem;
+border-radius: 0.25rem;
+border: none;
+margin-left: 2rem;
+}
+
+.buttondefdisabled:hover{
+cursor: not-allowed;
+}
+
+.buttonoutprimary {
+  background-color: white;
+    height: 2.5em;
+    width: 7em;
+    color: #007079;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+    border-color: #007079;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    border: solid 0.05rem;
+}
+
+.buttonoutprimary:hover {
+  background-color: #d7e4e0;
+  color: #007079;
+  cursor: pointer;
+}
+
+.buttonoutsecondary {
+  background-color: white;
+    height: 2.5em;
+    width: 7em;
+    color: #243746;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+    border-color: #243746;
+    margin-left: 2rem;
+    border: solid 0.05rem;
+
+}
+
+.buttonoutsecondary:hover {
+  background-color: #9aa8c7;
+  color: #243746;
+  cursor: pointer;
+}
+
+.buttonoutdanger {
+  background-color: white;
+    height: 2.5em;
+    width: 7em;
+    color: #EB0000;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+    border-color: #EB0000;
+    margin-left: 2rem;
+    border: solid 0.05rem;
+
+}
+
+.buttonoutdanger:hover {
+  background-color: #ecbdbd;
+  color: #EB0000;
+  cursor: pointer;
+}
+
+.buttonoutdisabled {
+  background-color: white;
+    height: 2.5em;
+    width: 7em;
+    color: #EAEAEA;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+    border-color: #EAEAEA;
+    margin-left: 2rem;
+    border: solid 0.05rem;
+
+}
+
+.buttonoutdisabled:hover {
+  color: #EAEAEA;
+  cursor: not-allowed;
+}
+
+.buttonghoprimary {
+  background-color: white;
+    height: 2.5em;
+    width: 7em;
+    color: #007079;
+    font-size: 0.875rem;
+    border: none;
+    background: none;
+    margin-left: 2rem;
+
+}
+
+.buttonghoprimary:hover {
+  background-color: #d7e4e0;
+  color: #007079;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.buttonghosecondary {
+  background-color: white;
+    height: 2.5em;
+    width: 7em;
+    color: #243746;
+    font-size: 0.875rem;
+    border: none;
+    background: none;
+    margin-left: 2rem;
+
+}
+
+.buttonghosecondary:hover {
+  background-color: #9aa8c7;
+  color: #243746;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.buttonghodanger {
+  background-color: white;
+    height: 2.5em;
+    width: 7em;
+    color: #EB0000;
+    font-size: 0.875rem;
+    border: none;
+    background: none;
+    margin-left: 2rem;
+
+}
+
+.buttonghodanger:hover {
+  background-color: #ecbdbd;
+  color: #EB0000;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.buttonghodisabled {
+  background-color: white;
+    height: 2.5em;
+    width: 7em;
+    color: #EAEAEA;
+    font-size: 0.875rem;
+    border: none;
+    background: none;
+    margin-left: 2rem;
+
+}
+
+.buttonghodisabled:hover {
+  color: #EAEAEA;
+  border-radius: 0.25rem;
+  cursor: not-allowed;
+}
+
+.primary-button-color {
+  background-color: #007079;
+    height: 2.5em;
+    width: 7em;
+    color: white;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+    border: none;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.secondary-button-color{
+  background-color: #243746;
+  height: 2.5em;
+  width: 7em;
+  color: white;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  border: none;
+  margin-left: 2rem;
+}
+
+.danger-button-color{
+  background-color: #EB0000;
+    height: 2.5em;
+    width: 7em;
+    color: white;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+    border: none;
+    margin-left: 2rem;
+}
+
+.disabled-button-color{
+  background-color: #EAEAEA;
+height: 2.5em;
+width: 7em;
+color: #BEBEBE;
+font-size: 0.875rem;
+border-radius: 0.25rem;
+border: none;
+margin-left: 2rem;
+}
+
+
+
+
+
+.button.hover,
+.button:hover,
+.button:focus {
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.10));
+}
+
+.button:focus {
+  outline: 0;
+}
+
+.button.active,
+.button:active {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.20) inset;
+  border-color: #000;
+}
+
+.button[disabled],
+.button.disabled,
+.button.disabled:hover,
+.button.disabled:focus,
+.button.disabled:active {
+  border: none;
+  background-image: none;
+  /* csslint ignore:start */
+  filter: alpha(opacity=40);
+  /* csslint ignore:end */
+  opacity: 0.40;
+  cursor: not-allowed;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.button.hidden {
+  display: none;
+}
+
+.button.primary,
+.button.selected,
+a.button.primary,
+a.button.selected {
+  background-color: var(--pure-color-primary);
+  color: var(--pure-color-light-100);
+}
+
+/* Button Groups */
+.button.group .button {
+  margin: 0;
+  border-radius: 0;
+  border-right: 1px solid #111;
+  /* fallback color for rgba() for IE7/8 */
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+
+}
+
+.button.group .button:first-child {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.button.group .button:last-child {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-right: none;
+}

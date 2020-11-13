@@ -10,6 +10,10 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface MyButton {
+    'color': string;
+    'value': string;
+  }
   interface MyComponent {
     /**
     * The first name
@@ -23,6 +27,10 @@ export namespace Components {
     * The middle name
     */
     'middle': string;
+  }
+  interface MyDivider {
+    'color': string;
+    'variant': string;
   }
   interface TestComponent {}
   interface TextField {
@@ -41,10 +49,22 @@ export namespace Components {
 declare global {
 
 
+  interface HTMLMyButtonElement extends Components.MyButton, HTMLStencilElement {}
+  var HTMLMyButtonElement: {
+    prototype: HTMLMyButtonElement;
+    new (): HTMLMyButtonElement;
+  };
+
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
     prototype: HTMLMyComponentElement;
     new (): HTMLMyComponentElement;
+  };
+
+  interface HTMLMyDividerElement extends Components.MyDivider, HTMLStencilElement {}
+  var HTMLMyDividerElement: {
+    prototype: HTMLMyDividerElement;
+    new (): HTMLMyDividerElement;
   };
 
   interface HTMLTestComponentElement extends Components.TestComponent, HTMLStencilElement {}
@@ -59,13 +79,19 @@ declare global {
     new (): HTMLTextFieldElement;
   };
   interface HTMLElementTagNameMap {
+    'my-button': HTMLMyButtonElement;
     'my-component': HTMLMyComponentElement;
+    'my-divider': HTMLMyDividerElement;
     'test-component': HTMLTestComponentElement;
     'text-field': HTMLTextFieldElement;
   }
 }
 
 declare namespace LocalJSX {
+  interface MyButton {
+    'color'?: string;
+    'value'?: string;
+  }
   interface MyComponent {
     /**
     * The first name
@@ -79,6 +105,10 @@ declare namespace LocalJSX {
     * The middle name
     */
     'middle'?: string;
+  }
+  interface MyDivider {
+    'color'?: string;
+    'variant'?: string;
   }
   interface TestComponent {}
   interface TextField {
@@ -94,7 +124,9 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'my-button': MyButton;
     'my-component': MyComponent;
+    'my-divider': MyDivider;
     'test-component': TestComponent;
     'text-field': TextField;
   }
@@ -106,7 +138,9 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      'my-button': LocalJSX.MyButton & JSXBase.HTMLAttributes<HTMLMyButtonElement>;
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+      'my-divider': LocalJSX.MyDivider & JSXBase.HTMLAttributes<HTMLMyDividerElement>;
       'test-component': LocalJSX.TestComponent & JSXBase.HTMLAttributes<HTMLTestComponentElement>;
       'text-field': LocalJSX.TextField & JSXBase.HTMLAttributes<HTMLTextFieldElement>;
     }
