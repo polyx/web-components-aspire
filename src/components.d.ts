@@ -24,6 +24,10 @@ export namespace Components {
     */
     'middle': string;
   }
+  interface MyDivider {
+    'color': string;
+    'variant': string;
+  }
   interface TestComponent {}
 }
 
@@ -36,6 +40,12 @@ declare global {
     new (): HTMLMyComponentElement;
   };
 
+  interface HTMLMyDividerElement extends Components.MyDivider, HTMLStencilElement {}
+  var HTMLMyDividerElement: {
+    prototype: HTMLMyDividerElement;
+    new (): HTMLMyDividerElement;
+  };
+
   interface HTMLTestComponentElement extends Components.TestComponent, HTMLStencilElement {}
   var HTMLTestComponentElement: {
     prototype: HTMLTestComponentElement;
@@ -43,6 +53,7 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement;
+    'my-divider': HTMLMyDividerElement;
     'test-component': HTMLTestComponentElement;
   }
 }
@@ -62,10 +73,15 @@ declare namespace LocalJSX {
     */
     'middle'?: string;
   }
+  interface MyDivider {
+    'color'?: string;
+    'variant'?: string;
+  }
   interface TestComponent {}
 
   interface IntrinsicElements {
     'my-component': MyComponent;
+    'my-divider': MyDivider;
     'test-component': TestComponent;
   }
 }
@@ -77,6 +93,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+      'my-divider': LocalJSX.MyDivider & JSXBase.HTMLAttributes<HTMLMyDividerElement>;
       'test-component': LocalJSX.TestComponent & JSXBase.HTMLAttributes<HTMLTestComponentElement>;
     }
   }
