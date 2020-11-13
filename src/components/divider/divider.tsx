@@ -1,7 +1,7 @@
 import {Component, Prop, h} from '@stencil/core'
 
 @Component({
-tag:'my-divider',
+tag:'esp-divider',
 styleUrl: 'divider.css',
 shadow: true
 })
